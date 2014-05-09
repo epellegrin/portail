@@ -1,17 +1,17 @@
 <?php
 $referer=$_SERVER[ 'HTTP_REFERER'];
 $URL='http://localhost' ;
-$pos=s trrpos($referer,$URL);
+$pos=strrpos($referer,$URL);
 if(empty($referer) || empty($pos) || $pos<0 ){
     header( 'Location: '.$URL); }
-$name=t rim($_POST[ 'name']);
-$email=t rim($_POST[ 'email']);
-$subject=t rim($_POST[ 'subject']);
-$betatest=t rim($_POST[ 'betatest']);
+$name=trim($_POST[ 'name']);
+$email=trim($_POST[ 'email']);
+$subject=trim($_POST[ 'subject']);
+$betatest=trim($_POST[ 'betatest']);
 if(function_exists( 'stripslashes')) {
-    $message=s tripslashes(trim($_POST[ 'message'])); }
+    $message=stripslashes(trim($_POST[ 'message'])); }
 else {
-    $message=t rim($_POST[ 'message']);
+    $message=trim($_POST[ 'message']);
 }
 $emailTo='contact@mobvino.com' ;
 $subject='Message depuis le site web de : ' .$name;
