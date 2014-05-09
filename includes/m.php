@@ -1,5 +1,5 @@
 <?php
-$referer=$ _SERVER[ 'HTTP_REFERER'];
+$referer=$_SERVER[ 'HTTP_REFERER'];
 $URL='http://localhost' ;
 $pos=s trrpos($referer,$URL);
 if(empty($referer) || empty($pos) || $pos<0 ){
