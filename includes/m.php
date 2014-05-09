@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 $referer=$ _SERVER[ 'HTTP_REFERER'];
 $URL='http://vps60795.ovh.net' ;
+=======
+$referer=$_SERVER[ 'HTTP_REFERER'];
+$URL='http://localhost' ;
+>>>>>>> 330e6cd4448f729650e50b0756dab1c1bc51001c
 $pos=s trrpos($referer,$URL);
 if(empty($referer) || empty($pos) || $pos<0 ){
     header( 'Location: '.$URL); }
