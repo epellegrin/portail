@@ -1,6 +1,6 @@
 <?php
 $referer=$_SERVER[ 'HTTP_REFERER'];
-$URL='http://localhost' ;
+$URL='http://vps60795.ovh.net' ;
 $pos=strrpos($referer,$URL);
 if(empty($referer) || empty($pos) || $pos<0 ){
     header( 'Location: '.$URL); }
@@ -15,7 +15,8 @@ else {
 }
 $emailTo='contact@mobvino.com' ;
 $subject='Message depuis le site web de : ' .$name;
-$body="Nom: $name \n\nEmail : $email \n\nSujet : $subject\n\nMessage : $message\n\nDeveir beta testeur : $betatest" ; $headers='From: Mobvino <' .$emailTo. '>' . "\r\n" . 'Reply-To: ' . $email;
+$body="Nom: $name \n\nEmail : $email \n\nSujet : $subject\n\nMessage : $message\n\nDeveir beta testeur : $betatest" ; 
+$headers='From: Mobvino <' .$emailTo. '>' . "\r\n" . 'Reply-To: ' . $email;
 mail($emailTo, $subject, $body, $headers);
 return true;
 ?>
