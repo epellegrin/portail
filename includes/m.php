@@ -15,7 +15,7 @@ else {
 }
 $emailTo='contact@mobvino.com' ;
 $subject='Message depuis le site web de : ' .$name;
-$body="Nom: $name \n\nEmail : $email \n\nSujet : $subject\n\nMessage : $message\n\nDeveir beta testeur : $betatest" ; 
+$body="Nom: $name \n\nEmail : $email \n\nSujet : $subject\n\nMessage : $message\n\nDevenir beta testeur : $betatest" ;
 $headers='From: Mobvino <' .$emailTo. '>' . "\r\n" . 'Reply-To: ' . $email;
 mail($emailTo, $subject, $body, $headers);
 return true;

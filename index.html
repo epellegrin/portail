@@ -25,24 +25,65 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/font-almelo.css" rel="stylesheet" type="text/css" />
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <script language=javascript>
+        function redirectOnUserAgent() {
+            var mapping = {
+                // scheme : market://details?id=<package_name>
+                'android': 'market://details?id=com.mobvino.mobvino',
 
+                //scheme : itms-apps://itunes.apple.com/app/id<numeric_app_id>
+                'iphone': 'itms-apps://itunes.apple.com/app/id925128279',
+
+                // if availables :
+                'ipad': 'itms-apps://itunes.apple.com/app/id925128279',
+                'ipod': 'itms-apps://itunes.apple.com/app/id925128279',
+            }
+
+            var userAgent = navigator.userAgent.toLowerCase();
+            for (var dev in mapping) {
+                if (userAgent.search(dev) != -1) {
+                    window.location = mapping[dev];
+                    return;
+                }
+            }
+
+            // else redirect to another page, or nothing
+            // window.location = 'http://www.my-top-app-site.com';
+        }
+    </script>
 </head>
 
-<body>
+<body onload="redirectOnUserAgent();">
     <header class="row container">
         <div id="logo" class="col-md-push-4 col-sm-4 col-sm-push-4">
             <h1>Mobvino, le vin en toute mobilité</h1>
             <img class="hidden-xs" src="img/logo.png" alt="Mobvino" />
             <img class="hidden-sm hidden-md hidden-lg logo_mobile" src="img/logo_mobile.png" alt="Mobvino" />
-        </div>
-    </header>
 
+        </div>
+
+
+    </header>
+    <div class="row container">
+        <div class="col-md-8 ">
+            <a href="https://play.google.com/store/apps/details?id=com.mobvino.mobvino">
+                <img alt="Get it on Google Play" src="img/fr_generic_rgb_wo_45.png" />
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="itms-apps://itunes.apple.com/app/id925128279">
+                <img alt="Get it on itunes" src="img/Available_on_iTunes_Badge_FR_110x40_1108.png" />
+            </a>
+        </div>
+    </div>
     <div id="slide" class="row">
         <div class="container">
             <div id="gauche" class="col-sm-6 col-xs-12">
                 <h2>Infos et partage des vins<br />dopés par les amateurs </h2>
                 <p>L'Identification des vins, les avis et conseils communautaires, la gestion de cave et des vins favoris, la géolocalisation.
                     <br>Maintenant, tous regroupés en une seule application</p>
+
+
                 <a class="btn btn-primary btn-lg scroll" href="#contact">Inscrivez-vous maintenant !</a>
             </div>
             <div id="droite" class="col-md-offset-2 col-sm-offset-1 col-md-4 col-lg-3 col-sm-5 hidden-xs">

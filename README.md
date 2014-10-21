@@ -51,7 +51,19 @@ Nous mettons tout en oeuvre pour peaufiner notre version première version Beta.
 dès ajourd'hui
 devenir un beta testeur de l'application : {bouton Notification}
 
+#installation du serveur
+##parametrage du serveur ssh
+des erreurs peuvent apparaitre dans la log :  
+Could not load host key: /etc/ssh/ssh_host_ecdsa_key" when connecting
 
+`dpkg-reconfigure openssh-server`
+
+##installation du serveur web
+`sudo apt-get install apache2 php5`
+
+
+##installation de github
+ apt-get install git
 
 ##mise en place du mailer
 sudo apt-get install ssmtp
