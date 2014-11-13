@@ -79,3 +79,5 @@ Now make sure that your php.ini has correct sendmail_path. It should read as:
 
 sendmail_path = /usr/sbin/sendmail -t
 Reload apache and your php should be able to send outgoing emails now.
+
+#redirection vers app store et google play
